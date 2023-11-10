@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation Using JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="/">
+      <fieldset>
+        <legend>Registration</legend>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+        />
+        <input type="email" name="email" id="email" placeholder="Email id" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Password"
+        />
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          placeholder="Confirm Password"
+        />
+
+        <button class="submit-btn" id="submit-btn" type="submit">Sumbit</button>
+      </fieldset>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
