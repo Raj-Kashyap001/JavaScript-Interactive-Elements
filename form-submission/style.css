@@ -23,7 +23,7 @@ body {
 }
 
 form {
-  max-width: 400px;
+  width: 400px;
   background: #fff;
   color: #000;
   padding-block: 1rem;
@@ -34,11 +34,14 @@ form {
 
   fieldset {
     border: none;
-    font-size: 1rem;
     padding-block: 0.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
     padding-inline: 2rem;
+
+    legend {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
   }
 
   input {
@@ -48,13 +51,6 @@ form {
     width: 100%;
     padding: 0.5rem 1rem;
     margin-block: 0.5rem;
-  }
-
-  input::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: red;
   }
 
   .submit-btn {
@@ -72,17 +68,10 @@ form {
   .submit-btn:active {
     box-shadow: none;
   }
-  input.failed {
-    outline: 2px solid red !important;
-  }
-  input.success {
-    outline: 2px solid #00cc00 !important;
-  }
-  .error {
-    font-size: 10px;
-    font-weight: 400;
+
+  span {
+    display: block;
     text-align: left;
-    text-transform: none;
-    letter-spacing: 1px;
+    font-size: 12px;
   }
 }
