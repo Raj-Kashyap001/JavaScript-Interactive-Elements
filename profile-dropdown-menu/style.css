@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  line-height: 1.5;
+  background: #061629;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  color: #000;
+}
+.logo {
+  width: 50px;
+  margin-inline: 1rem;
+  mix-blend-mode: multiply;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar > .nav-links > li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.navbar > .nav-links > li a {
+  color: #000;
+}
+
+.dropdown-container {
+  float: right;
+}
+
+.dropdown-menu {
+  width: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  max-height: 0px;
+  position: absolute;
+  top: 3rem;
+  right: 0.5rem;
+  background: white;
+  color: #000;
+  transition: 0.5s ease-in-out;
+  text-align: left;
+}
+
+.dropdown-menu > * {
+  padding: 0.5rem;
+}
+
+.dropdown-menu a {
+  color: #000;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgb(219, 215, 215);
+}
+
+.user-pic {
+  width: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.user-pic-dropdown {
+  width: 80px;
+}
+
+.dropdown-menu.opened {
+  max-height: 300px;
+}
+
+i {
+  margin-right: 8px;
+}
