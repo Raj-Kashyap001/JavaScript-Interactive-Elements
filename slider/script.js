@@ -55,7 +55,6 @@ const initSlider = () => {
         (scrollPosition / maxScrollLeft) *
         (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
       scrollbarThumb.style.left = `${thumbPosition}px`;
-      //ask chatgpt
     };
 
     imgContainer.addEventListener("scroll", () => {
