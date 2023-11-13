@@ -9,24 +9,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const tabContents = document.querySelectorAll(".content");
   const tabLine = document.querySelector(".line");
 
+  function setActiveTab(index) {
+    tabContents.forEach((content, contentIndex) => {
+      const isActive = contentIndex === index;
+
+      content.style.transform = isActive ? "translateX(0)" : "translateX(100%)";
+      content.style.opacity = isActive ? "1" : "0"; // Show selected content with opacity transition
+
+      if (isActive) {
+        tabButtons.forEach((btn, btnIndex) => {
+          btn.style.color = btnIndex === index ? "#2c4af1" : "black";
+        });
+
+        tabLine.style.left = `${tabButtons[index].offsetLeft}px`;
+        tabLine.style.width = `${tabButtons[index].offsetWidth}px`;
+      }
+    });
+  }
+
   tabButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      tabContents.forEach((content, contentIndex) => {
-        const isActive = contentIndex === index;
-
-        content.style.transform = isActive
-          ? "translateX(0)"
-          : "translateX(100%)";
-        content.style.opacity = isActive ? "1" : "0"; // Show selected content with opacity transition
-
-        if (isActive) {
-          button.style.color = "#2c4af1";
-          tabLine.style.left = `${button.offsetLeft}px`;
-          tabLine.style.width = `${button.offsetWidth}px`;
-        } else {
-          button.style.color = "black";
-        }
-      });
+      setActiveTab(index);
     });
+
+    // Set initial color state
+    if (index === 0) {
+      button.style.color = "#2c4af1";
+    }
   });
 });
