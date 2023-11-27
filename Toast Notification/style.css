@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins sans-serif;
+    background: #DDF4FF;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.toast{
+    background: #fff;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-left: 3px solid #417CFF;
+    overflow: hidden !important;
+    transform: translateX(calc(100% + 1rem));
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast.active{
+ transform: translateX(0);
+}
+
+.toast .toast-messages{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toast-messages .msg-1{
+    font-weight: 400;
+    font-size: 14px;
+    color: #696969;
+}
+
+.toast-messages .msg-2{
+    text-align: center;
+    font-weight: 600;
+}
+
+.toast-messages .fa-check{
+    background: #32FC67;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.toast .fa-xmark{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #FF3314;
+}
+
+.toast .progress{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: #dadada;
+}
+
+.toast .progress::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #134FD6;
+}
+
+.progress.active::before{
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress{
+    to{
+        right: 100%;
+    }
+}
+
+.show-toast{
+    padding: 10px 16px;
+    font: inherit;
+    border: none;
+    background: #417CFF;
+    color: #fff;
+    border: none;
+    background: #417CFF;
+    color: #fff;
+    cursor: pointer;
+    /* Add cursor pointer for better interaction */
+}

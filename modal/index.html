@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modals Using HTML and Javascript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button data-open-modal class="open-modal-btn">Click to open modal</button>
+
+    <dialog data-modal class="modal">
+      <div class="modal-content">
+        <img src="green-tick.png" alt="Checked Image" />
+        <p>Thanks for clicking!</p>
+        <button data-close-modal class="close-modal-btn">Close</button>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

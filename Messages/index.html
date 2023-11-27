@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Messages</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="show-chatbot">
+    <button class="toggleChatbox" id="toggleChatbox">
+      <i class="fa-solid fa-message"></i>
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="chatbot">
+      <button class="close-btn-mobile">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <header class="chatbot-header">
+        <h2>Chatbot</h2>
+      </header>
+      <div class="chat-container">
+        <ul class="messages">
+          <li class="message incoming">
+            <i class="fa-solid fa-robot"></i>
+            <span>Hello! how can i help you</span>
+          </li>
+
+          <li class="message outgoing">
+            <span>hi! tell me about yourself.</span>
+          </li>
+        </ul>
+        <div class="input-feild">
+          <textarea
+            class="chat-input"
+            placeholder="Type a message..."
+            class="input-message"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit" class="send-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

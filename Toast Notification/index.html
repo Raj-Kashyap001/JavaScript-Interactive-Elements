@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toast Notification</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="toast">
+        <div class="toast-messages">
+            <i class="fa-solid fa-check"></i>
+            <div class="message">
+                <p class="msg-1">You have recived a message!</p>
+                <p class="msg-2">This is an example toast message</p>
+            </div>
+        </div>
+        <div class="progress"></div>
+        <i class="fa-solid fa-xmark" id="close-toast"></i>
+    </div>
+
+<button class="show-toast">Show Toast</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
