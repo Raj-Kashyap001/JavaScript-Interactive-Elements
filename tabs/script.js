@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const isActive = contentIndex === index;
 
       content.style.transform = isActive ? "translateX(0)" : "translateX(100%)";
-      content.style.opacity = isActive ? "1" : "0"; // Show selected content with opacity transition
+      content.style.opacity = isActive ? "1" : "0";
 
       if (isActive) {
         tabButtons.forEach((btn, btnIndex) => {
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setActiveTab(index);
     });
 
-    // Set initial color state
     if (index === 0) {
       button.style.color = "#2c4af1";
     }

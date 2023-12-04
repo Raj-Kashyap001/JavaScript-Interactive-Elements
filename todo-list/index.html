@@ -4,10 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO List</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>TODO List</h1>
+
+  <body
+    class="bg-gradient-to-r from-blue-600 to-cyan-300 text-white font-sans flex justify-center items-center h-screen w-screen"
+  >
+    <div class="bg-white text-black rounded p-4" id="todo-app">
+      <header>
+        <h1 class="text-3xl text-center">TODO List</h1>
+      </header>
+
+      <div
+        class="flex gap-1 py-4 border-b-2 border-b-blue-500"
+        id="input-field"
+      >
+        <input
+          class="w-[calc(100%+1rem)] outline-none px-2 py-1 border-2 border-dark-300"
+          type="text"
+          id="todo-input"
+          placeholder="Write here..."
+        />
+        <button
+          class="bg-blue-700 text-white px-2 py-1 rounded-xl"
+          id="add-todo"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+
+      <ul class="max-h-sm h-96 overflow-y-auto px-2 py-4 w-80" id="todo-list">
+        <!-- Tasks will be added through JavaScript -->
+      </ul>
+    </div>
+
     <script type="module" src="script.js"></script>
   </body>
 </html>

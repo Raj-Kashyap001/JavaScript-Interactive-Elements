@@ -1,15 +1,64 @@
-const data = localStorage.getItem("mydata");
+const todoList = document.querySelector("#todo-list");
+const inputEl = document.querySelector("#todo-input");
+const addBtn = document.querySelector("#add-todo");
 
-const blob = new Blob([data], { type: "application/json" });
+inputEl.value = "";
+let tasks = [];
 
-const url = URL.createObjectURL(blob);
+loadTODO();
 
-const link = document.createElement("a");
+function addTodoList(userInput) {
+  if (userInput === "") return;
 
-link.href = url;
+  const li = document.createElement("li");
+  li.className =
+    "relative select-none bg-white border-2 border-dark-600 p-2 mt-2 hover:bg-cyan-50";
 
-link.download = "data.json";
+  const trashIcon = document.createElement("i");
+  trashIcon.className =
+    "fa-solid fa-trash absolute right-1 text-xl text-red-500";
+  trashIcon.id = "delete-todo";
 
-link.click();
+  li.textContent = userInput;
+  li.appendChild(trashIcon);
+  todoList.appendChild(li);
 
-URL.revokeObjectURL(url);
+  tasks.push(userInput);
+  saveTODO();
+  inputEl.value = "";
+}
+
+addBtn.addEventListener("click", () => {
+  const userInput = inputEl.value;
+  addTodoList(userInput);
+});
+
+todoList.addEventListener("click", (e) => {
+  if (e.target.id === "delete-todo") {
+    e.target.parentElement.remove();
+
+    const taskText = e.target.parentElement.textContent.trim();
+    const taskIndex = tasks.indexOf(taskText);
+    if (taskIndex !== -1) {
+      tasks.splice(taskIndex, 1);
+      saveTODO();
+    }
+  } else if (e.target.tagName === "LI") {
+    e.target.classList.toggle("line-through");
+  }
+});
+
+function saveTODO() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTODO() {
+  const data = localStorage.getItem("tasks");
+  if (data) {
+    const parsedData = JSON.parse(data);
+    parsedData.forEach((text) => {
+      addTodoList(text);
+    });
+    tasks = parsedData;
+  }
+}

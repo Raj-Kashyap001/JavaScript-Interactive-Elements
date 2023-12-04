@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--Header of music app  -->
+      <div class="top-bar flex">
+        <i class="material-icons">keyboard_arrow_down</i>
+        <span class="music-name"> My Music </span>
+        <i class="material-icons">more_horiz</i>
+      </div>
+
+      <div class="music-main">
+        <div class="album-art">
+          <img src="/img/default-cover-art.png" class="music-cover-img" />
+        </div>
+
+        <div class="music-info">
+          <h1 class="track-name">Unknown</h1>
+          <h3 class="track-author">Unknown Author</h3>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="duration flex">
+          <p class="current-time">0:00</p>
+          <p class="total-duration">0:00</p>
+        </div>
+
+        <div class="music-controls flex">
+          <button id="shuffle-btn">
+            <i class="material-icons" title="repeating all tracks">repeat</i>
+          </button>
+          <div class="main-controls">
+            <button id="prev-btn">
+              <i class="material-icons">skip_previous</i>
+            </button>
+            <button id="play-pause-btn">
+              <i class="material-icons paused">play_arrow</i>
+            </button>
+            <button id="next-btn">
+              <i class="material-icons">skip_next</i>
+            </button>
+          </div>
+          <button id="open-song-list">
+            <i class="material-icons">menu</i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Song list -->
+      <ul class="songs-list" id="songs-list">
+        <div class="list-header">
+          <span id="total-items">
+            <span class="material-icons"> queue_music </span>
+            Playlist
+          </span>
+          <button id="close-song-list">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+
+        <li class="song-item active" data-index="0">
+          <audio
+            src="audio/Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3"
+          ></audio>
+          <div class="song-details">
+            <h3 class="song-title">
+              On & On (feat. Daniel Levi) [NCS Release]
+            </h3>
+            <h4 class="song-author">Cartoon (feat. Daniel Levi)</h4>
+          </div>
+        </li>
+
+        <li class="song-item" data-index="1">
+          <audio
+            src="audio/Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release].mp3"
+          ></audio>
+          <div class="song-details">
+            <h3 class="song-title">
+              Why We Lose (feat. Coleman Trapp) [NCS Release]
+            </h3>
+            <h4 class="song-author">Cartoon (feat. Coleman Trapp)</h4>
+          </div>
+        </li>
+
+        <li class="song-item" data-index="2">
+          <audio
+            src="audio/Diamond Eyes - Everything [NCS Release].mp3"
+          ></audio>
+          <div class="song-details">
+            <h3 class="song-title">Everything [NCS Release].mp3</h3>
+            <h4 class="song-author">Diamond Eyes</h4>
+          </div>
+        </li>
+        <li class="song-item" data-index="3">
+          <audio
+            src="audio/Egzod & Maestro Chives & Alaina Cross - No Rival [NCS Release].mp3"
+          ></audio>
+          <div class="song-details">
+            <h3 class="song-title">No Rival [NCS Release]</h3>
+            <h4 class="song-author">Egzod & Maestro Chives & Alaina Cross</h4>
+          </div>
+        </li>
+        <li class="song-item" data-index="4">
+          <audio
+            src="audio/Jim Yosef x ROY KNOX - Sun Goes Down [NCS Release].mp3"
+          ></audio>
+          <div class="song-details">
+            <h3 class="song-title">Sun Goes Down [NCS Release]</h3>
+            <h4 class="song-author">Jim Yosef x ROY KNOX</h4>
+          </div>
+        </li>
+        <li class="song-item" data-index="5">
+          <audio src="audio/Sub Urban - Cradles [NCS Release].mp3"></audio>
+          <div class="song-details">
+            <h3 class="song-title">Cradles [NCS Release]</h3>
+            <h4 class="song-author">Sub Urban</h4>
+          </div>
+        </li>
+        <li class="song-item" data-index="6">
+          <audio src="audio/Syn Cole - Feel Good [NCS Release].mp3"></audio>
+          <div class="song-details">
+            <h3 class="song-title">Feel Good [NCS Release]</h3>
+            <h4 class="song-author">Syn Cole</h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
