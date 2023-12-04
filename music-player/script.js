@@ -184,7 +184,7 @@ progressBarContainer.addEventListener("click", (e) => {
 shuffleBtn.addEventListener("click", updateShuffleButton);
 
 playPauseSongBtn.addEventListener("click", () => {
-  !playing ? playSong() : pauseSong();
+  playing ? pauseSong() : playSong();
 });
 
 nextSongBtn.addEventListener("click", () => {
